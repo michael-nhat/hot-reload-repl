@@ -7,7 +7,8 @@
   io.pedestal/pedestal.jetty   {:mvn/version "0.5.11-beta-1"}
   org.slf4j/slf4j-simple       {:mvn/version "1.7.28"}
   nrepl/nrepl {:mvn/version "1.1.0-alpha1"}
-  cider/cider-nrepl {:mvn/version "0.28.5"}}
+  cider/cider-nrepl {:mvn/version "0.28.5"}
+  ns-tracker/ns-tracker {:mvn/version "0.4.0"}}
  :aliases {:start ;; added by me
            {:extra-paths ["src"]
             :exec-fn auto-reload-server.server/-main}
@@ -31,13 +32,13 @@
 
            :env-dev
            {
-            :extra-paths ["dev"]
+            :extra-paths ["src"]
             :extra-deps  {nrepl/nrepl                {:mvn/version "1.0.0"}
                           cider/cider-nrepl          {:mvn/version "0.28.7"}
                           com.bhauman/rebel-readline {:mvn/version "0.1.4"}
                           ns-tracker/ns-tracker {:mvn/version "0.4.0"}}
-            :main-opts ["-m" "user"
-                        "-e" "(ns pedestal-hello1.pedestal-hello)"]}
+            :main-opts ["-m" "auto-reload-server.reload"
+                        ]}
 
            :repl-rebel
            {:extra-deps {nrepl/nrepl                {:mvn/version "1.0.0"}

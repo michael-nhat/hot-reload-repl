@@ -1,8 +1,8 @@
-(ns reload
+(ns auto-reload-server.reload 
   (:require
-   [ns-tracker.core :as tracker]))
+ [ns-tracker.core :as tracker]))
 
-(def service (println " this is service"))
+(defn service [] (println "this is service"))
 
 (defn start
   [& [opts]]
@@ -36,10 +36,11 @@
                    (Thread/sleep 500))))
        (.setDaemon true)
        (.start))
-     (fn [] (swap! done not)))))
+     (fn [] ((println "end of watch ??")(swap! done not))))))
 
-(defn -main 
+(defn -main
   [& args]
-  (println "wtf dev main")
+  (println "in -main of reload")
   (start)
-  (watch))
+  (watch)
+  (println "stop ??"))
