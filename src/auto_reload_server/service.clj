@@ -1,5 +1,4 @@
-(ns auto-reload-server.service
-)
+(ns auto-reload-server.service)
 
 
 (defn -main

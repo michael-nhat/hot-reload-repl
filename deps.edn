@@ -1,4 +1,5 @@
-{:paths ["src"]
+{
+ :paths ["src"]
  :deps
  {org.clojure/clojure {:mvn/version "1.11.1"}
   io.pedestal/pedestal.service {:mvn/version "0.5.11-beta-1"}
@@ -29,12 +30,14 @@
                          "-f" "rebel-readline.main/-main"]}
 
            :env-dev
-           {;; :extra-paths ["dev"]
+           {
+            :extra-paths ["dev"]
             :extra-deps  {nrepl/nrepl                {:mvn/version "1.0.0"}
                           cider/cider-nrepl          {:mvn/version "0.28.7"}
-                          com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-            :main-opts ["-m" "pedestal-hello1.my-repl"
-                        "-e" "  (ns pedestal-hello1.pedestal-hello)"]}
+                          com.bhauman/rebel-readline {:mvn/version "0.1.4"}
+                          ns-tracker/ns-tracker {:mvn/version "0.4.0"}}
+            :main-opts ["-m" "user"
+                        "-e" "(ns pedestal-hello1.pedestal-hello)"]}
 
            :repl-rebel
            {:extra-deps {nrepl/nrepl                {:mvn/version "1.0.0"}

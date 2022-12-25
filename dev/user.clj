@@ -1,3 +1,4 @@
+;; (ns user)
 (defn -main
   [& args]
   (println "wtf user main")
