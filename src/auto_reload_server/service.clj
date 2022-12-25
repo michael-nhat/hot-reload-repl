@@ -3,5 +3,5 @@
 
 
 (defn -main
-  []
+  [& args]
   (println "wtf service main"))

@@ -38,10 +38,8 @@
        (.start))
      (fn [] (swap! done not)))))
 
-(defn -main [& args]
+(defn -main 
+  [& args]
+  (println "wtf dev main")
   (start)
   (watch))
-
-(defn -main
-  []
-  (println "wtf dev main"))

@@ -7,7 +7,7 @@
   org.slf4j/slf4j-simple       {:mvn/version "1.7.28"}
   nrepl/nrepl {:mvn/version "1.1.0-alpha1"}
   cider/cider-nrepl {:mvn/version "0.28.5"}}
- :aliases {:start2 ;; added by me
+ :aliases {:start ;; added by me
            {:extra-paths ["src"]
             :exec-fn auto-reload-server.server/-main}
 
