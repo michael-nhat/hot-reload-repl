@@ -1,12 +1,12 @@
-(ns auto-reload-server.reload 
+(ns auto-reload-server.reload
   (:require
- [ns-tracker.core :as tracker]))
+   [ns-tracker.core :as tracker]
+   [auto-reload-server.server :as server]))
 
-(defn service [] (println "this is service"))
 
 (defn start
   [& [opts]]
-  (service)
+  (server/-main)
   (println "start service"))
 
 (defn stop
@@ -30,13 +30,14 @@
    (let [track (tracker/ns-tracker src-paths)
          done (atom false)]
      (doto
-      (Thread. (fn []
-                 (while (not @done)
-                   (ns-reload track)
-                   (Thread/sleep 500))))
+       (Thread. (fn []
+                  (while (not @done)
+                    ;; (println "ksjlfsd")
+                    (ns-reload track)
+                    (Thread/sleep 500))))
        (.setDaemon true)
        (.start))
-     (fn [] ((println "end of watch ??")(swap! done not))))))
+     (fn []  (swap! done not)))))
 
 (defn -main
   [& args]

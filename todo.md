@@ -1,6 +1,6 @@
 ##### Todo
-    - runable deps
-    - runable reload
-    - runable repl
+    - runable repl with reload
 ##### Done
+    - runable reload
+    - runable deps
     - add deps

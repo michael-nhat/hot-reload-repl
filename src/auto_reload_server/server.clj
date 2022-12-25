@@ -1,6 +1,7 @@
-(ns auto-reload-server.server
-)
+(ns auto-reload-server.server)
+
+(def wtf "2322333311")
 
 (defn -main
   [& args]
-  (println "wtf server main"))
+  (println "wtf server main" wtf))
